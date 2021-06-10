@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Operaciones";
+    Layout = "~/Views/Shared/_MasterAtm.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Operaciones</h1>
+
+</div>
+
+
+<div class="container">
+    <div class="row"  style="margin-top:40px">
+        <div class="col-sm-4"></div>
+
+        <div class="col-12 col-sm-4">
+            <button  class="btn  btn-info" style="width:100%" onclick="window.location.href='/Home/Balance'">Balance</button>
+           
+        </div>
+        <div class="col-sm-4"></div>
+
+    </div>
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-sm-4"></div>
+
+        <div class="col-12 col-sm-4"> 
+            <button  class="btn  btn-info" style="width:100%" onclick="window.location.href='/Home/Retiro'">Retiro</button>          
+        </div>
+        <div class="col-sm-4"></div>
+        
+    </div>
+    
+
+    <div class="row"  style="margin-top:20px">
+        <div class="col-sm-4"></div>
+
+        <div class="col-12 col-sm-4"> 
+            <button  class="btn  btn-danger" style="width:100%" onclick="window.location.href='/Home/Salir'">Salir</button>
+        </div>
+        <div class="col-sm-4"></div>
+
+    </div>
+</div>

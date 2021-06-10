@@ -1,0 +1,14 @@
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Bll.deps.json
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Bll.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Bll.pdb
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Be.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Dal.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Be.pdb
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\bin\Debug\netcoreapp3.1\Dal.pdb
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.csprojAssemblyReference.cache
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.AssemblyInfo.cs
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.csproj.CopyComplete
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.pdb
+C:\Users\user\Documents\Cursos\ATM\ATM\Bll\obj\Debug\netcoreapp3.1\Bll.csproj.CoreCompileInputs.cache

@@ -1,0 +1,161 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_MasterAtm.cshtml";
+}
+@model Be.SessionTarjeta
+
+<div class="text-center">
+    <h1 class="display-4">ATM - Cajero Atomático</h1>
+    <p>Bienvenidos.</p>
+
+   
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="alert alert-primary col-sm-6 col-12 text-center" style="font-size: 17px;">
+            Ingrese los 16 dígitos de su tarjeta para poder operar.
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+    <form  asp-action="Index" method="post" id="form">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-12 col-sm-4">
+
+                <input type="text" asp-for="Nro" readonly value="" class=" form-control teclado_text" maxlength="19" />
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-12 col-sm-4">
+ 
+                <span asp-validation-for="Nro" class="text-danger" ></span>
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-sm-4"></div>
+            <div class="col-12 col-sm-4">
+                <table class="table_teclado">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">0</td>
+                        <td>Back</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-6 col-sm-2">
+                <button type="button" class="btn btn-primary" style="width:100%" onclick="Aceptar()">
+                    Aceptar
+                </button>
+
+            </div>
+            <div class="col-6 col-sm-2">
+                <button type="button" class="btn  btn-info" style="width:100%" onclick="Limpiar()">
+                    Limpiar
+                </button>
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+    </form>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+
+
+            $('.table_teclado tr td').click(function () {
+                $('#Nro').removeClass("valid");
+                var number = $(this).text();
+
+                if (number == 'Back') { // si es back de borrar
+
+                    var back = $('#Nro').val().substr($('#Nro').val().length - 1, $('#Nro').val().length);// tomo el ulimo digito para ver si es -
+
+                    if (back == '-') {
+                        back = $('#Nro').val().substr(0, $('#Nro').val().length - 2); // si es - borro 2 digitos - y el nuero
+
+                    } else { // si es un numero
+
+                        back = $('#Nro').val().substr(0, $('#Nro').val().length - 1);
+                    }
+                    $('#Nro').val(back).focus();
+                }
+                else {// si apreto un numero y no el back
+
+                    if ($('#Nro').val().length == 19) { return;  } // q corte si esta completo
+                    var ll = $('#Nro').val().length;
+                    if (ll == 4 || ll == 9 || ll == 14) {
+                        $('#Nro').val($('#Nro').val() + '-').focus();
+                    }
+
+                    $('#Nro').val($('#Nro').val() + number).focus();
+                }
+
+            });
+
+        });
+
+        function Limpiar() {
+            $('#Nro').val("");
+        }
+
+
+        function Aceptar() {
+            $('#Nro').removeClass("valid");
+            var Nro = $('#Nro').val().replace(/-/g, '');
+            if (Nro.length < 16) {
+                $('#Nro').addClass("valid");
+                return;
+            }
+            $('#Nro').val(Nro);  
+            document.getElementById("form").submit();
+        }
+    </script>
+
+
+</div>

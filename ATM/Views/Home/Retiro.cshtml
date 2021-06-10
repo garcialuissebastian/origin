@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewData["Title"] = "Retiro";
+    Layout = "~/Views/Shared/_MasterAtm.cshtml";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">ATM - Retiro </h1>
+</div>
+
+ 
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="alert alert-primary col-sm-6 col-12 text-center" style="font-size: 17px;">
+            Ingrese el monto a retirar.
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+    <form asp-action="Retiro" method="post" id="form">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-12 col-sm-4">
+
+                <input type="text" id="Monto" name="Monto" placeholder="0.00" readonly class=" form-control teclado_text" />
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-12 col-sm-4">
+
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-sm-4"></div>
+            <div class="col-12 col-sm-4">
+                <table class="table_teclado">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>.</td>
+                        <td>Back</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-sm-4"></div>
+
+
+            <div class="col-6 col-sm-2">
+                <button type="button" class="btn btn-primary" style="width:100%" onclick="Aceptar()">
+                    Aceptar
+                </button>
+
+            </div>
+            <div class="col-6 col-sm-2">
+                <button type="button" class="btn  btn-info" style="width:100%" onclick="Limpiar()">
+                    Limpiar
+                </button>
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+
+
+        <div class="row" style="margin-top:20px">
+            <div class="col-12 col-sm-5"></div>
+
+ 
+            <div class="col-6 col-sm-2">
+                <button type="button" class="btn btn-dark" style="width:100%"  onclick="window.location.href='/Home/Salir'">
+                    Salir
+                </button>
+
+            </div>
+            <div class="col-sm-5"></div>
+
+        </div>
+
+    </form>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+
+
+            $('.table_teclado tr td').click(function () {
+                $('#Monto').removeClass("valid");
+                var number = $(this).text();
+               
+                if (number == 'Back') { // si es back de borrar
+
+                    $('#Monto').val($('#Monto').val().substr(0, $('#Monto').val().length - 1)).focus();
+                }
+                else {// si apreto un numero y no el back
+                    var valo = $('#Monto').val();
+                    var len = valo.length;
+                    var index = valo.indexOf('.');
+                    
+                    if (index > 0) {
+                        var CharAfterdot = (len + 1) - index;
+                        
+                        if (CharAfterdot > 3) {
+                            return;
+                        }
+                    }
+                    if ( number =='.' && valo.indexOf(".") != -1 && len>0 ) {
+                        //retun -1 si no encuentra . en string
+                        return false;
+                    }
+                   
+                    if (number == '.' && len  < 1) {
+                        // Si es el primer caracter no dejo poner el .
+                        return false;
+                    }
+                    
+                    $('#Monto').val($('#Monto').val() + number).focus();
+
+                }
+
+            });
+
+        });
+
+        function Limpiar() {
+            $('#Monto').val("");
+        }
+
+
+        function Aceptar() {
+            $('#Monto').removeClass("valid");
+            var Monto = $('#Monto').val().replace(/-/g, '');
+            if ($('#Monto').val() == "") {
+                $('#Monto').addClass("valid");
+                return;
+            }
+            if (parseFloat($('#Monto').val()) < 0) {
+                $('#Monto').addClass("valid");
+                return;
+            }
+            $('#Monto').val(Monto);
+            document.getElementById("form").submit();
+        }
+    </script>
+
+
+   
+</div>

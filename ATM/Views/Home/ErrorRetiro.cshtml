@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "ErroRetiro";
+    Layout = "~/Views/Shared/_MasterAtm.cshtml";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">ATM - Retiro</h1>
+
+
+
+</div>
+<br />
+<h2>Se Produjo un error en el retiro </h2>
+
+<div class="container">
+    <br />
+
+
+    <div class="row">
+        <div class="alert alert-danger col-12">
+            <h4> El monto ingresado excede el balance su tarjeta. </h4>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <button onclick="Volver()" class="btn btn-info">Atrás</button>
+    </div>
+    <script>
+        function Volver() {
+            window.location.href="/Home/Retiro"
+        }
+    </script>
+</div>

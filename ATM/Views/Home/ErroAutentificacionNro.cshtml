@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "ErroAutentificacionNro";
+    Layout = "~/Views/Shared/_MasterAtm.cshtml";
+
+    var tipoError = (Be.ResultadoAutenticacionByNro)ViewBag.MyMessage;
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">ATM - Cajero Atomático</h1>
+
+
+
+</div>
+<br/>
+<h2>Se Produjo un error en la autentificación</h2>
+
+<div class="container">
+    <br />
+
+
+    <div class="row">
+        <div class="alert alert-danger col-12">
+            @{
+                if (tipoError == Be.ResultadoAutenticacionByNro.UsuarioBloqueado)
+                {
+                    <h4> La tarjeta encuentra bloqueado.</h4>
+                }
+
+                if (tipoError == Be.ResultadoAutenticacionByNro.UsuarioInvalido)
+                {
+                    <h4> Los datos ingresados son incorrectos.</h4>
+                }
+
+                if (tipoError == Be.ResultadoAutenticacionByNro.tjBloqueada)
+                {
+        <h4>Su tarjeta ha sido bloqueada porque por múltiples intentos.</h4>
+                }
+            }
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <button onclick="Volver()" class="btn btn-info">Volver</button>
+    </div>
+    <script>
+        function Volver() {
+            window.location.href="/"
+        }
+    </script>
+</div>

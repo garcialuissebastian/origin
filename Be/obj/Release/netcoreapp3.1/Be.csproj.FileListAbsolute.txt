@@ -1,0 +1,9 @@
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\bin\Release\netcoreapp3.1\Be.deps.json
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\bin\Release\netcoreapp3.1\Be.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\bin\Release\netcoreapp3.1\Be.pdb
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.csprojAssemblyReference.cache
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.AssemblyInfo.cs
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.dll
+C:\Users\user\Documents\Cursos\ATM\ATM\Be\obj\Release\netcoreapp3.1\Be.pdb
